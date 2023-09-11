@@ -1,4 +1,7 @@
-# AI-enhanced Personal Finance Assistant
+Optimized Python script:
+
+    # AI-enhanced Personal Finance Assistant
+
 
 class Expense:
     def __init__(self, amount, category):
@@ -49,10 +52,6 @@ class PersonalFinanceAssistant:
         for category, amount in categorized_expenses.items():
             print(category, ":", amount)
 
-    def set_budget(self, category, amount):
-        budget = Budget(category, amount)
-        self.budgets[category] = budget
-
     def monitor_budgets(self):
         for category, budget in self.budgets.items():
             expenses_in_category = sum(
@@ -62,27 +61,11 @@ class PersonalFinanceAssistant:
             elif expenses_in_category >= budget.amount * 0.8:
                 print("Approaching budget limit for", category)
 
-    def set_goal(self, name, amount):
-        goal = Goal(name, amount)
-        self.goals.append(goal)
-
     def track_goals(self):
         total_expenses = sum(expense.amount for expense in self.expenses)
         for goal in self.goals:
             progress = total_expenses / goal.amount * 100
             print(goal.name, "progress:", progress, "%")
-
-    def recommend_expenses(self):
-        # AI algorithm to analyze spending patterns and recommend cost-saving opportunities
-        pass
-
-    def get_financial_insights(self):
-        # AI algorithm to analyze financial data, market trends, and economic indicators
-        pass
-
-    def ensure_security_and_privacy(self):
-        # Implement security and privacy measures for data encryption and compliance with regulations
-        pass
 
 
 if __name__ == "__main__":
@@ -94,8 +77,8 @@ if __name__ == "__main__":
 
     pfa.track_expenses()
 
-    pfa.set_budget("Food", 200)
-    pfa.set_budget("Transportation", 100)
+    pfa.add_budget("Food", 200)
+    pfa.add_budget("Transportation", 100)
 
     pfa.monitor_budgets()
 
