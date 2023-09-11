@@ -42,10 +42,8 @@ class PersonalFinanceAssistant:
 
         categorized_expenses = {}
         for expense in self.expenses:
-            if expense.category in categorized_expenses:
-                categorized_expenses[expense.category] += expense.amount
-            else:
-                categorized_expenses[expense.category] = expense.amount
+            categorized_expenses.setdefault(expense.category, 0)
+            categorized_expenses[expense.category] += expense.amount
 
         print("Categorized expenses:")
         for category, amount in categorized_expenses.items():
